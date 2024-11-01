@@ -7,10 +7,7 @@ client_id = "dataentarceu";
 client_secret = "CciEH31F6xfI2dMhigu0wjqWnrI3bPvz";
 username = "?";
 password = "?";
-connection_id = "test"
-country = "AT"
-coding_schema = "NAT"
-accounting_point_id = "AT0020000000000000000000100341061"
+permission_id = "a3bb84ca-e0e1-4441-a95b-0c4c8c08f3d9"
 
 data = {
     "grant_type": 'password',
@@ -34,7 +31,7 @@ if response.status_code == 200:
     print("Now using access token to request data from API:")
 
     access_token = response.json()["access_token"]
-    url = f'https://data-api.entarc.eu/timeseries/{connection_id}/{country}/{coding_schema}/{accounting_point_id}'
+    url = f'https://data-api.entarc.eu/latest_values/{permission_id}'
 
     headers = {
         'Authorization': f'Bearer {access_token}'
@@ -44,7 +41,9 @@ if response.status_code == 200:
 
     # Check the response
     if response.status_code == 200:
-        print("Request succeeded:\n", json.dumps(response.json(),indent=2))
+        obj = json.loads(response.json()[0]["payload"]);
+
+        print("Request succeeded:\n", json.dumps(obj,indent=2))
     else:
         print("Request failed with status code:", response.status_code)
         print("Response:", response.text)
