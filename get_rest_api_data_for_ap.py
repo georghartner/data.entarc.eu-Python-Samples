@@ -10,9 +10,9 @@ password = "?";
 connection_id = "test"
 country = "AT"
 coding_schema = "NAT"
-accounting_point_id = "AT0020000000000000000000100341061"
-from_dt = "2024-09-10T00:00:00.000000Z"
-to_dt = "2024-010-31T00:00:00.000000Z"
+accounting_point_id = "AT0020000000000000000000100383465"
+from_dt = "2024-11-01T00:00Z"
+to_dt = "2024-11-02T00:00Z"
 tariffCode = "AWATTAR"
 
 data = {
