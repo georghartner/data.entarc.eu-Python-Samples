@@ -5,8 +5,8 @@ import json
 keycloakUrl = "https://iam.entarc.eu/realms/dataentarceu/protocol/openid-connect/token";
 client_id = "dataentarceu";
 client_secret = "CciEH31F6xfI2dMhigu0wjqWnrI3bPvz";
-username = "?";
-password = "?";
+username = "georg";
+password = "Ficken3000!";
 country = "AT"
 coding_schema = "NAT"
 accounting_point_id = "AT0020000000000000000000100383465"
@@ -36,8 +36,8 @@ if response.status_code == 200:
     print("Now using access token to request data from API:")
 
     access_token = response.json()["access_token"]
-    url = f'https://data-api.entarc.eu/timeseries/{country}/{coding_schema}/{accounting_point_id}/{from_dt}/{to_dt}'
-    # url = f'https://data-api.entarc.eu/timeseriesWithPrice/{country}/{coding_schema}/{accounting_point_id}/{from_dt}/{to_dt}/{tariffCode}'
+    url = f'https://data-api.entarc.eu/timeseries/test/{country}/{coding_schema}/{accounting_point_id}/{from_dt}/{to_dt}'
+    # url = f'https://data-api.entarc.eu/api/timeseriesWithPrice/{country}/{coding_schema}/{accounting_point_id}/{from_dt}/{to_dt}/{tariffCode}'
 
     headers = {
         'Authorization': f'Bearer {access_token}'
