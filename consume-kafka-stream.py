@@ -5,12 +5,14 @@ SASL_USERNAME="?"
 SASL_PASSWORD="?"
 
 # Available streams:
-# - SASL_USERNAME_permission-market-documents
-# - SASL_USERNAME_validated-historical-data
-# - SASL_USERNAME_raw-data-in-proprietary-format
-# - SASL_USERNAME_aiida-data
+#SERVICEID_status-messages
+#SERVICEID_validated-historical-data
+#SERVICEID_raw-data-in-proprietary-format
+#SERVICEID_aiida-data
+#SERVICEID_realtime-consumption-info
+#SERVICEID_realtime-consumption-val-info
 
-consumer = KafkaConsumer(SASL_USERNAME + "_permission-market-documents",
+consumer = KafkaConsumer(SASL_USERNAME + "_validated-historical-data",
                          value_deserializer= lambda m: json.loads(m.decode('utf-8')),
                          security_protocol="SASL_SSL",
                          ssl_check_hostname=True,
